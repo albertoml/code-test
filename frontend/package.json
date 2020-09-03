@@ -1,0 +1,32 @@
+{
+  "name": "midden-frontend",
+  "version": "0.0.1",
+  "author": "Alberto Martinez Lopez",
+  "dependencies": {
+    "@apollo/client": "^3.1.4",
+    "subscriptions-transport-ws": "^0.9.18",
+    "graphql": "^14.0.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-scripts": "3.1.0",
+    "react-router-dom": "^4.3.1",
+    "history": "^4.7.2",
+    "grommet": "^2.0.1",
+    "grommet-icons": "^3.2.0",
+    "styled-components": "^4.0.3",
+    "env-cmd": "^10.1.0"
+  },
+  "scripts": {
+    "dev": "env-cmd react-scripts start",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom --passWithNoTests",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

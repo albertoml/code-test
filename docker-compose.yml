@@ -1,0 +1,53 @@
+version: '2.0'
+services:
+  web:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - REACT_APP_GATEWAY_URL=http://md-gateway:4000/graphql
+  mongo:
+    image: mongo
+    container_name: md-mongo
+    ports:
+      - "27017:27017"
+  ad:
+    build: ./server/micros/ad
+    container_name: md-ad
+    ports:
+      - "4001:4001"
+    environment:
+      - PORT=4001
+      - DB_URL=mongodb://md-mongo:27017/test
+      - AUTH_URL=http://md-auth:4002/graphql
+    links:
+      - mongo
+      - auth
+  auth:
+    build: ./server/micros/auth
+    container_name: md-auth
+    ports:
+      - "4002:4002"
+    environment:
+      - PORT=4002
+      - DB_URL=mongodb://md-mongo:27017/test
+      - CLIENT_ID=mdCodeTest
+      - SIGNING_KID=M1nDd3Nc0D3t3St
+    links:
+      - mongo
+  gateway:
+    build: ./server/micros/gateway
+    container_name: md-gateway
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - AUTH_MICRO=http://md-auth:4002/graphql
+      - AD_MICRO=http://md-ad:4001/graphql
+    depends_on:
+      - ad
+      - auth
+    links:
+      - ad
+      - auth
