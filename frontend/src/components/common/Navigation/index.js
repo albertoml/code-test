@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as routes from '../../../constants/routes';
 import SignOutButton from '../../SignOut';
-import {Anchor, Box, Header, Nav} from "grommet";
+import {Anchor, Header, Nav} from "grommet";
 
 const Navigation = ({session, setSession}) => (
 

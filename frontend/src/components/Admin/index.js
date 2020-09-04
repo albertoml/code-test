@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Redirect} from "react-router-dom";
-import * as routes from "../../../constants/routes";
+import * as routes from "../../constants/routes";
 import {
   Box,
   Button, DataChart,
@@ -14,9 +14,9 @@ import {
   TextInput
 } from "grommet";
 import {Edit, History, Save} from "grommet-icons";
-import GetAds from "../../common/GetAds";
+import GetAds from "../common/GetAds";
 import {gql, useMutation} from "@apollo/client";
-import ErrorMessage from "../../common/Error";
+import ErrorMessage from "../common/Error";
 
 const GET_ADS = gql`
   query GetAllAds($skip: Int!, $limit: Int!) {
@@ -147,10 +147,13 @@ const AdsTable = ({ads, loadMore}) => {
       <div id="myModal" className="modal" style={{display: displayModal}}>
         <div className="modal-content">
           <span className="close" onClick={() => setDisplayModal('none')}>&times;</span>
-          <DataChart
-            series={['date', 'score']}
-            data={historyInfo ? historyInfo.map(h => ({score: h.score, date: formatDate(h.date)})): []}
-          />
+          {
+            historyInfo && historyInfo.length > 1 &&
+            <DataChart
+              series={['date', 'score']}
+              data={historyInfo.map(h => ({score: h.score, date: formatDate(h.date)}))}
+            />
+          }
           <Table>
             <TableHeader>
               <TableRow>

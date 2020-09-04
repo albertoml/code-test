@@ -1,5 +1,5 @@
 import React from 'react';
-import {gql, useQuery} from "@apollo/client";
+import {useQuery} from "@apollo/client";
 import ErrorMessage from "../Error";
 import Loading from "../Loading";
 import {useState} from "react";

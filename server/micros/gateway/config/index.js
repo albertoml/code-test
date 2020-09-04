@@ -1,5 +1,6 @@
 export const config = {
   environment: process.env.ENV || 'dev',
+  sleep: process.env.SLEEP_LENGTH,
   server: {
     port: process.env.PORT || 4000
   },

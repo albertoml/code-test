@@ -1,5 +1,5 @@
 import React from 'react';
-import {Ads} from "../../Ads";
+import {Ads} from "../Ads";
 
 const Landing = () => (
   <div>

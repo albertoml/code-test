@@ -4,9 +4,9 @@ import {Route, Router} from 'react-router-dom';
 import * as routes from '../../constants/routes';
 import history from '../../constants/history';
 import Navigation from "../common/Navigation";
-import Landing from "../pages/Landing";
-import {Admin} from "../pages/Admin";
-import SignIn from "../pages/SignIn";
+import Landing from "../Landing";
+import {Admin} from "../Admin";
+import SignIn from "../SignIn";
 import {Main} from "grommet";
 
 const App = () => {

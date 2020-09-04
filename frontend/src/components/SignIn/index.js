@@ -3,8 +3,8 @@ import {withRouter} from 'react-router-dom';
 import {gql, useMutation} from "@apollo/client";
 
 import {Box, Button, Form, FormField, TextInput} from "grommet";
-import ErrorMessage from "../../common/Error";
-import * as routes from "../../../constants/routes";
+import ErrorMessage from "../common/Error";
+import * as routes from "../../constants/routes";
 
 const SIGN_IN = gql`
   mutation($userName: String!, $password: String!, $grantType: String!, $clientId: String!) {

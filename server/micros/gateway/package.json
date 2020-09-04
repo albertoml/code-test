@@ -8,7 +8,10 @@
     "dev": "env-cmd nodemon -r esm app.js"
   },
   "dependencies": {
-    "esm": "^3.2.25"
+    "esm": "^3.2.25",
+    "apollo-server": "^2.17.0",
+    "graphql": "^15.3.0",
+    "@apollo/gateway": "^0.20.0"
   },
   "devDependencies": {}
 }
